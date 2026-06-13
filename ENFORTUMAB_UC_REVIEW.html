@@ -6249,7 +6249,7 @@ const ContinuousMDEngine = {
             hksjUCI = pMD + tCritHKSJ * hksjSE;
         }
 
-        // Prediction interval (Higgins 2009, t_{k-2}). NaN for k < 3.
+        // Prediction interval (Higgins 2009). NaN for k < 2.
         const piSE = Math.sqrt(tau2 + pSE * pSE);
         // PI df = k-1 per Cochrane Handbook v6.5 §10.10.4.3 (RevMan default).
         const tCritPI = (k >= 2) ? tQuantile(1 - (1 - confLevel) / 2, k - 1) : NaN;
